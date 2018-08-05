@@ -11,7 +11,7 @@
         <property name="username" value="tbj" />
         <property name="password">
             <bean class="com.tongbanjie.commons.support.spring.EncryptDBPasswordFactory">
-                <property name="password" value="-35c98510239d6694b7db97c81d2b0163" />
+                <property name="password" value="XXXXXXXX不管什么环境都是秘密,不能瞎传" />
             </bean>
         </property>
         <property name="filters" value="stat" />
