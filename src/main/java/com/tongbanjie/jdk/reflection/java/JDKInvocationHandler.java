@@ -3,6 +3,7 @@ package com.tongbanjie.jdk.reflection.java;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author xu.qiang
@@ -39,25 +40,30 @@ public class JDKInvocationHandler<T> implements InvocationHandler {
         return result;
     }
 
+
+    public static ConcurrentHashMap<Object, Object> cacheProxy = new ConcurrentHashMap<>();
+
+
     /**
      * 获取目标对象的代理对象
      *
      * @return 代理对象
      */
     public T getProxy() {
-        return (T) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
+        Object o = cacheProxy.get(target);
+        if (o != null) {
+            return (T) o;
+        }
+
+
+        /**
+         * jdk 7实际上已经缓存了proxy字节码文件。第二次调用实际就是new了一个对象而已。  本地可以缓存代理对象的实例
+         */
+        Object object = Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
                 target.getClass().getInterfaces(), this);
-    }
 
-
-    public static void main(String[] args) {
-        UserService userService = new UserServiceImpl();
-        JDKInvocationHandler<UserService> jdkInvocationHandler = new JDKInvocationHandler<>(userService);
-
-        UserService proxy = jdkInvocationHandler.getProxy();
-
-        //com.tongbanjie.jdk.reflection.java.UserServiceImpl@3fe329eb
-        proxy.add();
+        cacheProxy.put(target, object);
+        return (T) object;
     }
 
 }

@@ -1,4 +1,6 @@
-package com.tongbanjie.jdk.reflection;
+package com.tongbanjie.jdk.reflection.clazz;
+
+import com.tongbanjie.jdk.reflection.Demo;
 
 import java.lang.reflect.Method;
 

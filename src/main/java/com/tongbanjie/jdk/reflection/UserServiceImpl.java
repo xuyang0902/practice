@@ -1,4 +1,4 @@
-package com.tongbanjie.jdk.reflection.java;
+package com.tongbanjie.jdk.reflection;
 
 /**
  * @author xu.qiang
