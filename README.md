@@ -12,7 +12,7 @@
          reflection:反射的基本用法，jdk的动态代理，cglib的动态代理
          concurrent：jdk，concurrent包下的一些核心类用法
          thread：多线程，线程中断等用法
-         map：hashmap的数据结构，concurrentHashMap的数据结构【如何支持搞笑的支持并发】
+         map：hashmap的数据结构，concurrentHashMap的数据结构【如何支持并发】
 
 
 
