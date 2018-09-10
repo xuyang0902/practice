@@ -70,13 +70,6 @@
             <version>1.1.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.tongbanjie.commons</groupId>
-            <artifactId>commons</artifactId>
-            <version>2.0</version>
-        </dependency>
-
-
         <!--disruptor-->
         <dependency>
             <groupId>com.lmax</groupId>
@@ -84,6 +77,7 @@
             <version>3.3.6</version>
         </dependency>
 
+        <!--cglib-->
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
