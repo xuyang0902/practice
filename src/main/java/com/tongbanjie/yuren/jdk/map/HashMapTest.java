@@ -1,7 +1,5 @@
 package com.tongbanjie.yuren.jdk.map;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -10,13 +8,11 @@ import java.util.Map;
  * hashMap单元测试
  *
  * @author xu.qiang
- * @date 18/9/10
- * @see http://ifeve.com/hashmap-concurrenthashmap
+ * @date 18/9/10   http://ifeve.com/hashmap-concurrenthashmap
  */
 public class HashMapTest {
 
-    @Test
-    public void testHashMap() {
+    public static void main(String[] args) {
         HashMap<String, Object> map = new HashMap<String, Object>();
 
         map.put("key1", "value1");
@@ -48,6 +44,5 @@ public class HashMapTest {
         }
 
     }
-
 
 }

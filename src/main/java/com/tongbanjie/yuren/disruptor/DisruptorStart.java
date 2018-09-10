@@ -1,4 +1,4 @@
-package com.tongbanjie.yuren.disruptor.helloworld;
+package com.tongbanjie.yuren.disruptor;
 
 import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.EventHandler;

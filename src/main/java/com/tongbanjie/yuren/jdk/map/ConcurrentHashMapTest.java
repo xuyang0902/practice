@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ConcurrentHashMapTest {
 
-    public void testConcurrentHashMap() {
+    public static void main(String[] args) {
         ConcurrentHashMap<String, Object> concurrentHashMap = new ConcurrentHashMap<>();
         concurrentHashMap.put("key1", "value1");
 
@@ -35,7 +35,6 @@ public class ConcurrentHashMapTest {
             Map.Entry<String, Object> next = entryIterator.next();
             System.out.println("key=" + next.getKey() + " value=" + next.getValue());
         }
-
 
     }
 }

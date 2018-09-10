@@ -5,7 +5,6 @@ import com.tongbanjie.yuren.jdk.reflection.UserServiceImpl;
 import com.tongbanjie.yuren.jdk.reflection.cglib.CglibProxy;
 import com.tongbanjie.yuren.jdk.reflection.cglib.MyCglibInterceptor;
 import com.tongbanjie.yuren.jdk.reflection.java.JDKInvocationHandler;
-import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,11 +14,16 @@ import java.util.concurrent.TimeUnit;
  */
 public class Benmark {
 
+    public static void main(String[] args) {
+        Benmark.remotingCall();
+        //Benmark.jdkProxcy();
+        //Benmark.cglibProxy();
+    }
+
     /**
      * 直接调用执行100000次调用，共耗时：2506 微秒
      */
-    @Test
-    public void remotingCall() {
+    public static void remotingCall() {
 
         UserService userService = new UserServiceImpl();
 
@@ -45,8 +49,7 @@ public class Benmark {
     /**
      * jdk动态代理执行100000次调用，共耗时：2771 微秒
      */
-    @Test
-    public  void jdkProxcy() {
+    public static void jdkProxcy() {
         UserService userService = new UserServiceImpl();
         JDKInvocationHandler<UserService> jdkInvocationHandler = new JDKInvocationHandler<>(userService);
 
@@ -69,8 +72,7 @@ public class Benmark {
     /**
      * cglib动态代理执行100000次调用，共耗时：5489 微秒
      */
-    @Test
-    public  void cglibProxy() {
+    public static void cglibProxy() {
         UserService userService = new UserServiceImpl();
         MyCglibInterceptor myCglibInterceptor = new MyCglibInterceptor();
 

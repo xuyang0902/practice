@@ -11,7 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author xu.qiang
  * @date 18/7/5
- * @see https://javadoop.com/post/AbstractQueuedSynchronizer
+ *
+ * https://javadoop.com/post/AbstractQueuedSynchronizer
  * ps:一个写AQS很不错的博客
  */
 public class AQSLearning {
