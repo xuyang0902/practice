@@ -14,7 +14,9 @@
          thread：多线程，线程中断等用法
          map：hashmap的数据结构，concurrentHashMap的数据结构【如何支持并发】
       4、23中设计模式:todo
-
-
-
+      5、限流方案：单机限流 & 分布式限流
+      6、分布式锁：redis+lua实现
+                  zk实现@see zklock
+      7、todo            
+      
 
