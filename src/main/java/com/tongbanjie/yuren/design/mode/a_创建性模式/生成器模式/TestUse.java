@@ -12,5 +12,15 @@ public class TestUse {
 
     }
 
-    
+
+    /**
+     *
+     *
+     *
+     * https://blog.csdn.net/itachi85/article/details/50644745
+     *
+     * 我理解StringBuilder了解一下就可以了，其他没必要
+     */
+
+
 }
