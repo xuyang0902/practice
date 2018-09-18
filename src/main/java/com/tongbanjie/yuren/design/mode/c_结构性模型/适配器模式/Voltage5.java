@@ -1,16 +1,11 @@
 package com.tongbanjie.yuren.design.mode.c_结构性模型.适配器模式;
 
 /**
- * 测试使用
- *
+ * 介绍：dst接口：客户需要的5V电压
  * @author xu.qiang
  * @date 18/9/10
  */
-public class TestUse {
 
-    public static void main(String[] args) {
-
-    }
-
-    
+public interface Voltage5 {
+    int output5V();
 }
