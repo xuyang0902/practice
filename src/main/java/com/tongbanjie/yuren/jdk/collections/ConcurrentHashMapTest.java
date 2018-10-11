@@ -1,4 +1,4 @@
-package com.tongbanjie.yuren.jdk.map;
+package com.tongbanjie.yuren.jdk.collections;
 
 import java.util.Iterator;
 import java.util.Map;

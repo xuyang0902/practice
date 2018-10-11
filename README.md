@@ -12,7 +12,8 @@
          reflection:反射的基本用法，jdk的动态代理，cglib的动态代理
          concurrent：jdk，concurrent包下的一些核心类用法
          thread：多线程，线程中断等用法
-         map：hashmap的数据结构，concurrentHashMap的数据结构【如何支持并发】
+         collections：hashmap的数据结构，concurrentHashMap的数据结构【如何支持并发】
+                      list 数据结构 arraylist vector linkedList
       4、23中设计模式:todo
       5、限流方案：单机限流 & 分布式限流
       6、分布式锁：redis+lua实现
