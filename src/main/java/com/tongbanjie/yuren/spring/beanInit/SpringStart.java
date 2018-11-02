@@ -13,6 +13,7 @@ public class SpringStart {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         App apps = applicationContext.getBean("app", App.class);
+
         System.out.println(apps.getAppName());
 
     }

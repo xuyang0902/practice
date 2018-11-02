@@ -8,4 +8,8 @@
         <property name="appName" value="appName"/>
     </bean>
 
+    <bean class="com.tongbanjie.yuren.spring.beanInit.BeanPostProcessor1"/>
+    <bean class="com.tongbanjie.yuren.spring.beanInit.BeanFactoryPostProcessor1"/>
+    <bean class="com.tongbanjie.yuren.spring.beanInit.BeanDefinitionRegistryPostProcessor1"/>
+
 </beans>
