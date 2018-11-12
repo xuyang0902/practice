@@ -12,6 +12,13 @@ import java.util.List;
  */
 public class CompareTest {
 
+
+    /**
+     * Comparable 内比较器
+     *
+     * Comparator 外比较器
+     * @param args
+     */
     public static void main(String[] args) {
 
         Integer one = 1;
@@ -25,13 +32,12 @@ public class CompareTest {
         System.out.println(women18.compareTo(women19));
 
 
-
         Person man18 = new Person(18,0,"xuyang18");
         Person man19 = new Person(19,0,"xuyang19");
         Person man20 = new Person(20,0,"xuyang20");
         System.out.println(women18.compareTo(man18));
 
-        List<Person> list = new ArrayList<Person>(2<<8);
+        ArrayList<Person> list = new ArrayList<Person>(2<<8);
         list.add(women18);
         list.add(women19);
         list.add(women20);
@@ -41,11 +47,10 @@ public class CompareTest {
 
         Collections.sort(list);
 
-
+        System.out.println("内排序：>>>>年龄从小到大 性别从男到女");
         for (Person person : list) {
             System.out.println(person.toString());
         }
-
 
     }
 

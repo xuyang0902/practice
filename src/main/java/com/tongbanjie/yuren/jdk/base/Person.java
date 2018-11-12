@@ -8,7 +8,7 @@ import java.util.Comparator;
  * @author xu.qiang
  * @date 18/10/22
  */
-public class Person implements Comparable<Person>,Comparator<Person> {
+public class Person implements Comparable<Person> {
 
     private Integer age;
 
@@ -51,11 +51,6 @@ public class Person implements Comparable<Person>,Comparator<Person> {
     }
 
     @Override
-    public int compare(Person o1, Person o2) {
-        return o1.compareTo(o2) * -1;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -77,6 +72,10 @@ public class Person implements Comparable<Person>,Comparator<Person> {
 
     @Override
     public int compareTo(Person o) {
+
+        /*
+         * 年龄从小到大 性别从男到女
+         */
 
         if (this.equals(o)) {
             return 0;
