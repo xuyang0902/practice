@@ -11,7 +11,15 @@ import io.netty.util.CharsetUtil;
 
 import java.net.InetSocketAddress;
 
+
+
+
 /**
+ *
+ * netty官方的源码分析 还是蛮不错的
+ * https://netty.io/wiki/related-articles.html
+ *
+ *
  *
  * @see com.tongbanjie.yuren.jdk.socket.nio_0.NIOServer
  * @see com.tongbanjie.yuren.jdk.socket.nio.Start
