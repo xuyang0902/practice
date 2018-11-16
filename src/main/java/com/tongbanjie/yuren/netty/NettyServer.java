@@ -1,5 +1,6 @@
 package com.tongbanjie.yuren.netty;
 
+import com.tongbanjie.yuren.jdk.socket.nio_0.NIOServer0;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -12,36 +13,31 @@ import io.netty.util.CharsetUtil;
 import java.net.InetSocketAddress;
 
 
-
-
 /**
- *
  * netty官方的源码分析 还是蛮不错的
  * https://netty.io/wiki/related-articles.html
  *
- *
- *
- * @see com.tongbanjie.yuren.jdk.socket.nio_0.NIOServer
- * @see com.tongbanjie.yuren.jdk.socket.nio.Start
  * @author xu.qiang
  * @date 18/11/13
+ * @see NIOServer0
+ * @see com.tongbanjie.yuren.jdk.socket.nio.Start
  */
 public class NettyServer {
 
     public static void main(String[] args) throws InterruptedException {
 
-        ServerBootstrap serverBootstrap = new ServerBootstrap();
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(4);
 
+        ServerBootstrap serverBootstrap = new ServerBootstrap();
         ServerBootstrap handler = serverBootstrap.group(bossGroup, workerGroup)
-                .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 4096)
                 .option(ChannelOption.SO_REUSEADDR, true)
                 .option(ChannelOption.SO_KEEPALIVE, false)
-                .childOption(ChannelOption.TCP_NODELAY, true)
                 .option(ChannelOption.SO_SNDBUF, 65536)
                 .option(ChannelOption.SO_RCVBUF, 65536)
+                .childOption(ChannelOption.TCP_NODELAY, true)
+                .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) throws Exception {
@@ -58,9 +54,6 @@ public class NettyServer {
 
     }
 
-    /**
-     * rpc服务端处理器
-     */
     static class NettyServerHandler extends SimpleChannelInboundHandler<String> {
 
         @Override

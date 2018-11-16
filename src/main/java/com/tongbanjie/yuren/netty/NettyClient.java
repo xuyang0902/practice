@@ -23,11 +23,11 @@ public class NettyClient {
         EventLoopGroup worker = new NioEventLoopGroup(4);
 
         Bootstrap handler = bootstrap.group(worker)
-                .channel(NioSocketChannel.class)
                 .option(ChannelOption.SO_KEEPALIVE, false)
                 .option(ChannelOption.TCP_NODELAY, true)
                 .option(ChannelOption.SO_SNDBUF, 65536)
                 .option(ChannelOption.SO_RCVBUF, 65536)
+                .channel(NioSocketChannel.class)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) throws Exception {
@@ -60,7 +60,7 @@ public class NettyClient {
         while (loop-- > 0) {
             connect.channel().writeAndFlush("hello-server");
 
-            Thread.sleep(1);
+            Thread.sleep(1000);
         }
 
     }
