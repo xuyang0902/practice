@@ -26,8 +26,8 @@ public class NettyServer {
 
     public static void main(String[] args) throws InterruptedException {
 
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
-        EventLoopGroup workerGroup = new NioEventLoopGroup(4);
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1,new MyThreadFactory("Boss-"));
+        EventLoopGroup workerGroup = new NioEventLoopGroup(4,new MyThreadFactory("Worker-"));
 
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         ServerBootstrap handler = serverBootstrap.group(bossGroup, workerGroup)
@@ -57,8 +57,13 @@ public class NettyServer {
     static class NettyServerHandler extends SimpleChannelInboundHandler<String> {
 
         @Override
-        protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+        public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+            System.out.println("threadName" + Thread.currentThread().getName() + "   客户端注册上来了");
+            super.channelRegistered(ctx);
+        }
 
+        @Override
+        protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
 
             System.out.println("threadName" + Thread.currentThread().getName() + "   服务端接受到消息-->" + msg);
             ctx.channel().writeAndFlush("hello-client");

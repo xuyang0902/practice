@@ -1,7 +1,5 @@
 package com.tongbanjie.yuren;
 
-import java.util.Comparator;
-
 /**
  * @author xu.qiang
  * @date 18/9/10
@@ -44,10 +42,14 @@ public class HelloWord {
         System.out.println(bb.hashCode());
         System.out.println(aa.equals(bb));
 
+
+        Integer AA = 100;
+        System.out.println(AA.equals(null));
+
     }
 
 
-    public void test(){
+    public void test() {
         System.out.println("HelloWord class load");
     }
 
