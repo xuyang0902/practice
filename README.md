@@ -18,6 +18,9 @@
       5、限流方案：单机限流 & 分布式限流
       6、分布式锁：redis+lua实现
                   zk实现@see zklock
-      7、todo            
+      7、cap原理解读
+      8、netty学习
+      9、dubbo
+      10.rocketmq
       
 
