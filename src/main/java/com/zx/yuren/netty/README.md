@@ -1,7 +1,7 @@
 
-# Netty 为什么这么多RPC,消息中间件，大数据生态圈，都使用的通信层组件？ https://netty.io/
+### Netty 为什么这么多RPC,消息中间件，大数据生态圈，都使用的通信层组件？ https://netty.io/
 
-## why netty?
+##### why netty?
 
       netty底层基于jdk的NIO，我们为什么不直接基于jdk的nio或者其他nio框架？下面是我总结出来的原因
       
@@ -14,7 +14,7 @@
       7.netty社区活跃，遇到问题随时邮件列表或者issue
 
 
-#netty底层核心类  我简单的理解
+##### netty底层核心类  我简单的理解
       NioEventLoop  （Reactor线程  其实就是一个死循环可以简单理解为 boss和work线程都是这三部 select ，handleKey，runTask）
             boss线程handleKey是处理accept的请求，转发到work线程中处理
             work线程handleKey是处理实际的进出传输数据
@@ -26,7 +26,7 @@
       NioServerSocketChannel：使用nio作为服务端的通信机制
       
       
-########  服务端启动的解释     
+###### 服务端启动的解释     
       EventLoopGroup 已经在我的其他文章中详细剖析过，说白了，就是一个死循环，不停地检测IO事件，处理IO事件，执行任务
       ServerBootstrap 是服务端的一个启动辅助类，通过给他设置一系列参数来绑定端口启动服务
       group(bossGroup, workerGroup) 我们需要两种类型的人干活，一个是老板，一个是工人，老板负责从外面接活，接到的活分配
@@ -42,7 +42,7 @@
       bossGroup.shutdownGracefully(); 
       workerGroup.shutdownGracefully(); 关闭两组死循环
       
-###### 黏包拆包工具类 tcp的传输过程避免不了黏包拆包 netty是如何巧妙的处理的？ todo  需要补充知识点
+##### 黏包拆包工具类 tcp的传输过程避免不了黏包拆包 netty是如何巧妙的处理的？ todo  需要补充知识点
       
      https://netty.io/wiki/related-articles.html  官网的几篇博客写的不错，值得阅读，当然是在结合源码的，还是得自己多debug，
      
