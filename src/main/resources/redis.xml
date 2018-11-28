@@ -71,7 +71,7 @@
           p:resultType="java.lang.Integer"/>
 
     <!--自定义redis工具类,在需要缓存的地方注入此类  -->
-    <bean id="redisLockUtil" class="com.tongbanjie.yuren.distribute.lock.RedisLockComponent"
+    <bean id="redisLockUtil" class="com.zx.yuren.distribute.lock.RedisLockComponent"
           p:redisTemplate-ref="redisTemplate"
           p:lockRedisScript-ref="lockRedisScript"
           p:unLockRedisScript-ref="unLockRedisScript"
