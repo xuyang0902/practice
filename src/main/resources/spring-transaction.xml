@@ -8,7 +8,7 @@
         <property name="url">
             <value><![CDATA[jdbc:mysql://192.168.1.105:3306/test?useUnicode=true&characterEncoding=UTF-8]]></value>
         </property>
-        <property name="username" value="tbj" />
+        <property name="username" value="账号保密" />
         <property name="password" value="不管什么环境我都不会传密码的哈哈哈哈" />
         <property name="filters" value="stat" />
         <property name="maxActive" value="20" />

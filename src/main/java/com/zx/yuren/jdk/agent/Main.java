@@ -7,7 +7,7 @@ import com.sun.tools.attach.AttachNotSupportedException;
 import java.io.IOException;
 
 /**
- * java -javaagent:/Users/tbj/.m2/repository/com/practice/agent/1.0/agent-1.0.jar
+ * java -javaagent:/Users/yuren/.m2/repository/com/practice/agent/1.0/agent-1.0.jar
  *
  * @author xu.qiang
  * @date 18/11/7
@@ -24,7 +24,7 @@ public class Main {
 //        for (VirtualMachineDescriptor vmd : list) {
 //            if (vmd.displayName().endsWith("Main")) {
 //                VirtualMachine virtualMachine = VirtualMachine.attach(vmd.id());
-//                virtualMachine.loadAgent("/Users/tbj/.m2/repository/com/practice/agent/1.0/agent-1.0.jar", "agentArgs");
+//                virtualMachine.loadAgent("/Users/yuren/.m2/repository/com/practice/agent/1.0/agent-1.0.jar", "agentArgs");
 //                System.out.println("ok");
 //                virtualMachine.detach();
 //            }
