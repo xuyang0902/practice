@@ -1,4 +1,4 @@
-package com.zx.yuren.data.structure;
+package com.zx.yuren.internal.strength.data;
 
 import java.io.Serializable;
 
