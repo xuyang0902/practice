@@ -15,7 +15,7 @@ public class RedisLockTest {
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("redis.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("redis/redis.xml");
         final RedisLockComponent redisLockUtil = applicationContext.getBean("redisLockUtil", RedisLockComponent.class);
 
 

@@ -18,7 +18,7 @@ public class TestTransaction {
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-transaction.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/spring-transaction.xml");
 
 
         TransactionTemplate template = applicationContext.getBean("transactionTemplate", TransactionTemplate.class);

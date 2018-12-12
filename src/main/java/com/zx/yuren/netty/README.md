@@ -44,7 +44,9 @@
       
 ##### 黏包拆包工具类 tcp的传输过程避免不了黏包拆包 netty是如何巧妙的处理的？ todo  需要补充知识点
       
-     https://netty.io/wiki/related-articles.html  官网的几篇博客写的不错，值得阅读，当然是在结合源码的，还是得自己多debug，
+[官网Netty博客](https://netty.io/wiki/related-articles.html)
+
+      写的不错，值得阅读，当然是在结合源码的，还是得自己多debug，
      
 ##### 如何debug调试 ，阅读代码？
      看看boss和worker线程是什么时候创建的 你会恍然大悟的。。如何调试？？

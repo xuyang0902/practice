@@ -9,7 +9,7 @@
 
 
     <!-- 加载配置文件 -->
-    <context:property-placeholder location="classpath:/*.properties"/>
+    <context:property-placeholder location="classpath:*.properties"/>
     <!-- redis连接池配置-->
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
         <!--最大空闲数-->
@@ -63,11 +63,11 @@
     </bean>
 
     <bean id="lockRedisScript" class="org.springframework.data.redis.core.script.DefaultRedisScript"
-          p:location="redisLock.lua"
+          p:location="redis/redisLock.lua"
           p:resultType="java.lang.Integer"
     />
     <bean id="unLockRedisScript" class="org.springframework.data.redis.core.script.DefaultRedisScript"
-          p:location="redisUnlock.lua"
+          p:location="redis/redisUnlock.lua"
           p:resultType="java.lang.Integer"/>
 
     <!--自定义redis工具类,在需要缓存的地方注入此类  -->
