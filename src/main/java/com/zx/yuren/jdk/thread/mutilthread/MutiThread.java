@@ -32,7 +32,7 @@ public class MutiThread {
      */
 
     public static void main(String[] args) {
-        MutiThread.testMutiThreadByJdk();
+        //MutiThread.testMutiThreadByJdk();
         MutiThread.testMutiThreadByMydefine();
     }
 
@@ -84,9 +84,9 @@ public class MutiThread {
                     @Override
                     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
                         try {
+                            System.out.println("直接到这里了？？？？");
                             executor.getQueue().put(r);
                         } catch (InterruptedException e) {
-
 
                         }
                     }
@@ -99,13 +99,19 @@ public class MutiThread {
          */
         threadPool.allowCoreThreadTimeOut(true);
 
-        int loop = 10;
+        int loop = 15;
         while ((loop--) > 0) {
 
             final int num = loop;
             threadPool.execute(new Runnable() {
                 @Override
                 public void run() {
+
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     System.out.println(Thread.currentThread().getName() + "__ print:" + num);
                 }
             });
