@@ -1,9 +1,10 @@
-package com.zx.yuren.jdk.AQS;
+package com.zx.yuren.jdk.collections.生产者消费者;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * ReentrantLock来实现
  * @author xu.qiang
  * @date 18/12/12
  */
@@ -31,7 +32,10 @@ public class MyQueue<T> {
     public T take() throws InterruptedException {
         reentrantLock.lockInterruptibly();
         try {
-            if (count == 0) {
+            while (count == 0) {
+
+                System.out.println("------->>>>>"+ Thread.currentThread().getName() + "===>>>> notEmpty.await()" );
+
                 notEmpty.await();
             }
             T item = (T)items[takeIndex];
@@ -56,7 +60,7 @@ public class MyQueue<T> {
 
         reentrantLock.lockInterruptibly();
         try {
-            if (count == items.length) {
+            while (count == items.length) {
                 notFull.await();
             }
 
@@ -67,7 +71,7 @@ public class MyQueue<T> {
             }
             count++;
         } finally {
-            notEmpty.signal();
+            notEmpty.signalAll();
             reentrantLock.unlock();
         }
     }
@@ -83,7 +87,6 @@ public class MyQueue<T> {
 
                 while (true) {
                     try {
-                        Thread.sleep(10);
                         System.out.println(Thread.currentThread().getName() + "消费：" + myQueue.take());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -91,8 +94,24 @@ public class MyQueue<T> {
                 }
 
             }
-        }, "Consumer");
+        }, "Consumer-1");
         thread.start();
+
+        Thread consumer2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while (true) {
+                    try {
+                        System.out.println(Thread.currentThread().getName() + "消费：" + myQueue.take());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }, "Consumer-2");
+        consumer2.start();
 
 
         Thread thread1 = new Thread(new Runnable() {

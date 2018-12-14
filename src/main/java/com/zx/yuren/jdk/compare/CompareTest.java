@@ -1,4 +1,4 @@
-package com.zx.yuren.jdk.base;
+package com.zx.yuren.jdk.compare;
 
 import java.util.ArrayList;
 import java.util.Collections;

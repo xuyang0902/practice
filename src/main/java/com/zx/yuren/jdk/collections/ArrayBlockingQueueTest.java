@@ -1,4 +1,4 @@
-package com.zx.yuren.jdk.AQS;
+package com.zx.yuren.jdk.collections;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author xu.qiang
  * @date 18/7/18
  */
-public class ArrayBlockingQueueLearning {
+public class ArrayBlockingQueueTest {
 
     public static void main(String[] args) throws InterruptedException {
 

@@ -1,4 +1,4 @@
-package com.zx.yuren.jdk.base;
+package com.zx.yuren.jdk.compare;
 
 /**
  * 人类

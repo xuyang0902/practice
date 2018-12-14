@@ -1,4 +1,4 @@
-package com.zx.yuren.jdk.AQS;
+package com.zx.yuren.jdk.lock;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * https://javadoop.com/post/AbstractQueuedSynchronizer
  * ps:一个写AQS很不错的博客
  */
-public class AQSLearning {
+public class ReentrantLockTest {
 
     /**
      * 还是要读读源码的咯
@@ -31,11 +31,20 @@ public class AQSLearning {
     private static Integer tickets = 100;
 
     public static void main(String[] args) {
+        reentrantLock.lock();
 
+//        System.out.println(reentrantLock.tryLock());
+//        System.out.println(reentrantLock.tryLock());
+//        System.out.println(reentrantLock.tryLock());
+//        System.out.println(reentrantLock.tryLock());
+//        reentrantLock.unlock();
+//        reentrantLock.unlock();
+//        reentrantLock.unlock();
+//        reentrantLock.unlock();
 
         ExecutorService executorService = Executors.newFixedThreadPool(8);
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10; i++) {
 
             executorService.execute(new Runnable() {
                 @Override
