@@ -1,4 +1,4 @@
-package com.zx.yuren.spring.beanInit;
+package com.zx.yuren.spring.bean;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -7,14 +7,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author xu.qiang
  * @date 18/5/15
  */
-public class SpringStart {
+public class SpringMain {
 
     public static void main(String[] args) {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/bean.xml");
-        App apps = applicationContext.getBean("app", App.class);
+        MySpringBean mySpringBean = applicationContext.getBean("mySpringBean", MySpringBean.class);
 
-        System.out.println(apps.getAppName());
+
+        System.out.println(mySpringBean);
 
     }
 }

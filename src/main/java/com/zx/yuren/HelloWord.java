@@ -28,6 +28,15 @@ public class HelloWord {
          *  一个厂商可以生成：16777216个网络设备
          *  00000 0000 ： 0000 0000：0000 0000
          */
+
+
+        try{
+
+            int index = 1/0;
+        }finally {
+
+            System.out.println(">>>>>");
+        }
     }
 
 }

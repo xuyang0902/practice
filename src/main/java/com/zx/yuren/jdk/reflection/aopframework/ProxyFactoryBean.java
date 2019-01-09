@@ -32,7 +32,8 @@ public class ProxyFactoryBean {
 				/*new Class[]{Collection.class},*/
 				target.getClass().getInterfaces(),
 				new InvocationHandler(){
-				
+
+					@Override
 					public Object invoke(Object proxy, Method method, Object[] args)
 							throws Throwable {
 

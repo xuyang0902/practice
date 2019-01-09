@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="app" class="com.zx.yuren.spring.beanInit.App" init-method="init">
-        <property name="version" value="2"/>
-        <property name="appName" value="appName"/>
-    </bean>
 
-    <bean class="com.zx.yuren.spring.beanInit.BeanPostProcessor1"/>
-    <bean class="com.zx.yuren.spring.beanInit.BeanFactoryPostProcessor1"/>
-    <bean class="com.zx.yuren.spring.beanInit.BeanDefinitionRegistryPostProcessor1"/>
+    <context:component-scan base-package="com.zx.yuren.spring"/>
+
+    <bean id="mySpringBean" class="com.zx.yuren.spring.bean.MySpringBean" init-method="init"/>
 
 </beans>
