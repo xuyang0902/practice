@@ -1,6 +1,7 @@
 package com.zx.yuren.internal.strength.algorithm.sort;
 
 import com.zx.yuren.internal.strength.algorithm.sort.strategy.BubbleSort;
+import com.zx.yuren.internal.strength.algorithm.sort.strategy.QuickSort;
 
 /**
  * @author xu.qiang
@@ -11,11 +12,11 @@ public class SortTestMain {
     public static void main(String[] args) {
 
 
-        Sort sort = new BubbleSort();
+        Sort sort = new QuickSort();
 
         SortStrategy sortStrategy = new SortStrategy(sort);
 
-        Integer[] list = new Integer[]{1,9,8,2,3,7,6,4,5};
+        Integer[] list = new Integer[]{9,7,5,6};
         sortStrategy.sort(list);
 
     }
