@@ -20,7 +20,7 @@ public class UserMapperSpringTest {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("mybatis/spring-db.xml");
 
 
-        UserMapper userMapper = applicationContext.getBean(UserMapper.class);
+        final UserMapper userMapper = applicationContext.getBean(UserMapper.class);
 
         System.out.println("#######  " + userMapper.selectById(1L));
         System.out.println("#######  " + userMapper.selectById(1L));

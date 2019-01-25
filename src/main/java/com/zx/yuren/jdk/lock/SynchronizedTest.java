@@ -19,7 +19,7 @@ public class SynchronizedTest {
         }
 
 
-        SynchronizedTest test = new SynchronizedTest();
+        final SynchronizedTest test = new SynchronizedTest();
 
         ExecutorService executorService = Executors.newFixedThreadPool(8);
 
