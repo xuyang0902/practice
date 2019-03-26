@@ -1,5 +1,7 @@
 package com.zx.yuren.jdk.classloader;
 
+import com.zx.yuren.jdk.lock.SynchronizedTest;
+
 /**
  * @author xu.qiang
  * @date 18/11/7
@@ -24,6 +26,16 @@ public class Launcher {
 
     public static void main(String[] args) throws Exception {
 
+        String property = System.getProperty("java.class.path");
+        String[] split = property.split(":");
+        for (String s : split) {
+            System.out.println(s);
+        }
+
+
+        System.out.println("##############>>>>>>>>>>>>>>>>>>>");
+
+
 
         System.out.println(System.getProperty("sun.boot.class.path"));
         System.out.println(System.getProperty("java.ext.dirs"));
@@ -38,6 +50,14 @@ public class Launcher {
 
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>   ");
 
+
+
+        PracticeClassLoader practiceClassLoader = new PracticeClassLoader();
+
+
+        Class<?> aClass = practiceClassLoader.loadClass("com.zx.yuren.jdk.lock.SynchronizedTest11");
+
+        System.out.println(aClass);
 
     }
 }

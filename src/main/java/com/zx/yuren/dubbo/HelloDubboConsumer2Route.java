@@ -11,14 +11,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 使用编程式代码变成，读者容易断点进去看。
  *
+ *
+ * 客户端
+ *
  * @author xu.qiang
  * @date 18/11/28
  */
-public class HelloDubboConsumer {
+public class HelloDubboConsumer2Route {
 
 
     public static void main(String[] args) {
 
+
+        //dubbo-spring的spi  需要拿到com.zx.yuren.dubbo.route.MyRoute
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/dubbo-route.xml");
+        SpringExtensionFactory.addApplicationContext(applicationContext);
 
         // Application Info
         ApplicationConfig application = new ApplicationConfig();
