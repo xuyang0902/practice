@@ -1,32 +1,30 @@
 package com.zx.yuren;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author xu.qiang
  * @date 19/2/13
  */
 public class Looper {
+
     public static void main(String[] args) throws InterruptedException {
 
+        new Looper().test();
 
-        new Thread(new Runnable() {
+    }
 
-            @Override
-            public void run() {
-                while(true){
+    AtomicInteger atomicInteger = new AtomicInteger(100);
 
-                    System.out.println("hahah");
-                }
+    public synchronized void test(){
 
-            }
-        }).start();
+        System.out.println(atomicInteger.get());
 
-
-        while(true){
-
-
-            System.out.println("hjjjjjjjjjjjj");
+        if(atomicInteger.decrementAndGet() == 0){
+            return;
         }
 
+        test();
 
     }
 }

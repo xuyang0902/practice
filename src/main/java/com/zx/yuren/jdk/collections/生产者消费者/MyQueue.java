@@ -45,9 +45,10 @@ public class MyQueue<T> {
                 takeIndex = 0;
             }
             count--;
+            notFull.signal();
             return item;
         } finally {
-            notFull.signal();
+
             reentrantLock.unlock();
         }
     }
@@ -70,8 +71,9 @@ public class MyQueue<T> {
                 putIndex = 0;
             }
             count++;
-        } finally {
             notEmpty.signalAll();
+        } finally {
+
             reentrantLock.unlock();
         }
     }

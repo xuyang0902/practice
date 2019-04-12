@@ -3,6 +3,7 @@ package com.zx.yuren.netty.bytebuff;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.CompositeByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.buffer.UnpooledByteBufAllocator;
 
 /**
  * @author xu.qiang
@@ -27,5 +28,10 @@ public class NettyByteBuff {
             System.out.println(new String(buf.nioBuffer().array()));
         }
 
+
+        UnpooledByteBufAllocator byteBufAllocator = new UnpooledByteBufAllocator(true);
+
+
+        Unpooled.buffer(1024);
     }
 }

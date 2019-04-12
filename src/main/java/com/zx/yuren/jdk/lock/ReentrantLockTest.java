@@ -28,10 +28,9 @@ public class ReentrantLockTest {
      */
     private static ReentrantLock reentrantLock = new ReentrantLock(true/*是否为公平锁*/);
 
-    private static Integer tickets = 100;
+    private static Integer tickets = 1000;
 
     public static void main(String[] args) {
-        reentrantLock.lock();
 
 //        System.out.println(reentrantLock.tryLock());
 //        System.out.println(reentrantLock.tryLock());
@@ -44,7 +43,7 @@ public class ReentrantLockTest {
 
         ExecutorService executorService = Executors.newFixedThreadPool(8);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
 
             executorService.execute(new Runnable() {
                 @Override

@@ -1,5 +1,6 @@
 package com.zx.yuren.jdk.concurrent;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.LockSupport;
 
 /**
@@ -17,8 +18,8 @@ public class LockSupportTest {
 
 
     public static void main(String[] args) throws Exception {
-        test01();
-        //test02();
+        //test01();
+        test02();
     }
 
     public static void test01() throws Exception {
@@ -67,5 +68,6 @@ public class LockSupportTest {
         //Thread.sleep(1000);
         LockSupport.unpark(A);
     }
+
 
 }

@@ -14,8 +14,13 @@ import java.util.Iterator;
  *
  */
 public class NIOServer0 {
+
+
     // 通道管理器
-    private Selector selector;
+    private Selector selector = Selector.open();
+
+    public NIOServer0() throws IOException {
+    }
 
     /**
      * 获得一个ServerSocket通道，并对该通道做一些初始化的工作
@@ -30,8 +35,9 @@ public class NIOServer0 {
         serverChannel.configureBlocking(false);
         // 将该通道对应的ServerSocket绑定到port端口
         serverChannel.socket().bind(new InetSocketAddress(port));
-        // 获得一个通道管理器
-        this.selector = Selector.open();
+
+
+
         // 将通道管理器和该通道绑定，并为该通道注册SelectionKey.OP_ACCEPT事件,注册该事件后，
         // 当该事件到达时，selector.select()会返回，如果该事件没到达selector.select()会一直阻塞。
         serverChannel.register(selector, SelectionKey.OP_ACCEPT);
@@ -132,7 +138,11 @@ public class NIOServer0 {
         System.out.println(SelectionKey.OP_READ);
         System.out.println(SelectionKey.OP_WRITE);
         NIOServer0 server = new NIOServer0();
+
+
+        //多个channel可以绑定到同一个通道管理器上
         server.initServer(8000);
+        server.initServer(7999);
         server.listen();
     }
 

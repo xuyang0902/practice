@@ -11,7 +11,7 @@
     <!--aspepctj的注解代理  默认使用jdk代理  当proxy-target-class=true时使用cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="false"/>
 
-    <bean class="com.zx.yuren.spring.aop.PersonImpl" id="personImpl"/>
+    <bean class="com.zx.yuren.spring.aop.PersonImpl" id="personImpl" lazy-init="true"/>
 
 
 </beans>
