@@ -34,7 +34,6 @@ public class SynchronizedTest {
             });
         }
 
-
         executorService.shutdown();
 
     }
